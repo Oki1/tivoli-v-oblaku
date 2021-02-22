@@ -11,17 +11,26 @@ def to_db(link,filename, type_fixes, fixes):
         elif(x in type_fixes):
             db[x] = db[x].astype(type_fixes[x])
 
+    try:
+        del db["LATITUDE"]
+        del db["LONGITUDE"]
+    except:
+        pass
+
+    longLat = []
+    for l in db["OBMOČJE"]:
+        longLat.append(l.split(","))
+    del db["OBMOČJE"]
+    db["LATITUDE"] = float(longLat[0][0])
+    db["LONGITUDE"] = float(longLat[0][1])
+
     cnx = connect(path.join(link, path.splitext(filename)[0] + ".db"))
     db.to_sql(name="drevesa", con=cnx)
 
 if __name__ == "__main__":
-    def la(x): #potrebno ce so prazne celice
-        try:
-            return tuple(float(y) for y in x.split(","))
-        except:
-            return x
+
     type_fixes = {"ID_DREVESA": int, "Obseg": float}
-    fixes = {"Koordinate": la}
+    fixes = {}
 
     PATH = "excel/"
     for file in listdir(PATH):
