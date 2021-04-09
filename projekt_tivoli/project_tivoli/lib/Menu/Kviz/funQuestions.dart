@@ -44,10 +44,10 @@ final questions = [
     options: [
       Option(code: 'A', text: 'Ker proizvajajo vodo', isCorrect: false),
       Option(code: 'B', text: 'Ker porabljajo kisik', isCorrect: false),
-      Option(code: 'C', text: 'Ker pretvarjajo CO2', isCorrect: true),
-      Option(code: 'D', text: 'Ker proizvajajo CO2', isCorrect: false),
+      Option(code: 'C', text: 'Ker pretvarjajo CO₂', isCorrect: true),
+      Option(code: 'D', text: 'Ker proizvajajo CO₂', isCorrect: false),
     ],
-    solution: 'Drevesa so potrbna, saj čistijo zrak in pretvarajo CO2 v kisik v procesu fotosinteze.',
+    solution: 'Drevesa so avtotrofi, ki z uporabo svetlobne energije pri fotosintezi asimilirajo velike količine CO2, kot stranski produkt pa nastaja kisik',
   ),
   Question(
     text: 'Kje se nahaja park tivoli?',
@@ -61,12 +61,12 @@ final questions = [
   ),
   Question(
     text:
-        'Huh?',
+        'Na kateri strani drevesa raste mah?',
     options: [
-      Option(code: 'A', text: 'ja', isCorrect: false),
-      Option(code: 'B', text: 'ne', isCorrect: false),
-      Option(code: 'C', text: "nevem", isCorrect: false),
-      Option(code: 'D', text: "kaj", isCorrect: true),
+      Option(code: 'A', text: 'Severni', isCorrect: true),
+      Option(code: 'B', text: 'Južni', isCorrect: false),
+      Option(code: 'C', text: "Zahodni", isCorrect: false),
+      Option(code: 'D', text: "Vzhodni", isCorrect: false),
     ],
     solution: 'Out of ideas',
   ),
@@ -81,10 +81,10 @@ final questions = [
     solution: 'Park Tivoli so odprli leta 1813.',
   ),
   Question(
-    text: ' Kdo je preuredil park Tivoli leta 1939?',
+    text: 'Kdo je preuredil park Tivoli leta 1939?',
     options: [
       Option(code: 'A', text: 'Jože Plečnik', isCorrect: true),
-      Option(code: 'B', text: 'Nevem', isCorrect: false),
+      Option(code: 'B', text: 'Ne vem', isCorrect: false),
       Option(code: 'C', text: 'Maks Fabiani‎', isCorrect: false),
       Option(
         code: 'D',
@@ -96,13 +96,13 @@ final questions = [
   ),
   
   Question(
-    text: 'Test',
+    text: 'Kako lahko določiš starost drevesa',
     options: [
-      Option(code: 'A', text: 'y', isCorrect: false),
-      Option(code: 'B', text: 'n', isCorrect: false),
-      Option(code: 'C', text: 't', isCorrect: false),
-      Option(code: 'D', text: 's', isCorrect: true),
+      Option(code: 'A', text: 'Z velikostjo drevesa', isCorrect: false),
+      Option(code: 'B', text: 'S premerom debla', isCorrect: true),
+      Option(code: 'C', text: 'S premerom krošnje', isCorrect: false),
+      Option(code: 'D', text: 'Z velikostjo vej', isCorrect: false),
     ],
-    solution: 'Tessst',
+    solution: 'Starost drevesa lahko določimo glede na premer debla s pomočjo rastnega faktroja.',
   ),
 ];

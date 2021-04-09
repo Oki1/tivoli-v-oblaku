@@ -2,6 +2,7 @@
 
 import 'dart:math';
 import 'package:flutter/rendering.dart';
+import 'package:project_tivoli/Utilities/Globals.dart';
 import 'package:sqflite/sqflite.dart';
 
 import '../Utilities/Map.dart';
@@ -139,13 +140,15 @@ class _GMapState extends State<GMap> {
 
 
   Widget cardWidget(int m_iItem) {
+
+    TextStyle m_pText = TextStyle(color: m_pTextColor);
     return OutlineButton(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(getInfoFromDb.kor[m_iItem].name),
+          Text(getInfoFromDb.kor[m_iItem].name, style: m_pText),
           if(lastLocalPos != LatLng(0,0))
-            Text(calculateDistance(lastLocalPos.latitude, lastLocalPos.longitude, getInfoFromDb.kor[m_iItem].lat, getInfoFromDb.kor[m_iItem].long).toStringAsFixed(2) + " km") 
+            Text(calculateDistance(lastLocalPos.latitude, lastLocalPos.longitude, getInfoFromDb.kor[m_iItem].lat, getInfoFromDb.kor[m_iItem].long).toStringAsFixed(2) + " km", style: m_pText,) 
         ],
       ),
       onPressed: () => {
@@ -185,13 +188,19 @@ class _GMapState extends State<GMap> {
               ),
               SizedBox(// or use fixed size like 200
                 height: MediaQuery.of(context).size.height - MediaQuery.of(context).size.width - 75,
-                child: SingleChildScrollView( 
+                child: Container(
+                  child: SingleChildScrollView( 
                     child: Column(
                     children: m_lTreeList.map((item) => cardWidget(item)).toList(),
                   ),
+                  
+                  ),
+                  color: m_pBackGroundColor,
                 ),
+              
               ),
             ],
+          
         ),
         floatingActionButton: new Visibility(
           visible: isDistanceTenMeters(),
